@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Личен сайт - За мен</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    <header>
+        <h1>Деян Илков</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Начало</a></li>
+                <li><a href="projects.html">Проекти</a></li>
+                <li><a href="contact.html">Контакти</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Кой съм аз?</h2>
+            <p>Аз съм Деян Илков. Изучавам програмиране (C#, HTML и CSS) от 2022 във ЧПГДН "Софтуни Будител". </p>
+        </section>
+    </main>
+
+    <div class="container">
+        <main>
+            <p class="h2carousel">Снимки на проекти</p>
+            <section class="carousel">
+                <div class="carousel-container">
+                    <div class="carousel-images">
+                        <img src="./media/desk.jpg" alt="Image 1" class="active">
+                        <img src="./media/kickhub-frontpage.png" alt="Image 2">
+                        <img src="./media/window.jpg" alt="Image 3">
+                        <img src="./media/kickhub-instagram.png" alt="Image 4">
+                        <img src="./media/electronics.jpg" alt="Image 5">
+                        <!-- Add more images as needed -->
+                    </div>
+                    <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
+                    <button class="next" onclick="changeSlide(1)">&#10095;</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    
+
+    <footer>
+        <p>© 2024 Deyan Ilkov</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
