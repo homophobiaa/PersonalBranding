@@ -190,6 +190,7 @@ footer a:hover {
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
+    border: 1px ridge #28a745;
     display: flex; /* Enable flexbox */
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
@@ -197,7 +198,6 @@ footer a:hover {
 
 .carousel-container {
     position: relative;
-    border: 1px ridge #28a745;
 }
 
 .carousel-images {
