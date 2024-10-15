@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакти</title>
+    <title>Контакти - Деян Илков</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Свържете се с мен</h1>
+        <div class="logo-container">
+            <a class="logo" href="./index.html">
+                <img src="./media/logo.png" alt="Logo">
+            </a>
+        </div>
         <nav>
             <ul>
                 <li><a href="index.html">Начало</a></li>
@@ -16,13 +20,29 @@
                 <li><a href="contact.html">Контакти</a></li>
             </ul>
         </nav>
-    </header>
+    </header>    
 
     <main>
         <section>
             <h2>Контактна информация</h2>
             <p>Електронна поща: <a href="mailto:deyan.ilkov.highschool@buditel.bg">deyan.ilkov.highschool@buditel.bg</a></p>
             <p>Социални мрежи: <a href="https://www.instagram.com/d.ilkv/profilecard/?igsh=cmZvZ3E4bXN0cTdk">Instagram</a>, <a href="https://github.com/homophobiaa">GitHub</a></p>
+        </section>
+
+        <section>
+            <h2>Свържете се с мен</h2>
+            <form action="submit_form.php" method="post">
+                <label for="name">Име:</label><br>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Електронна поща:</label><br>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="message">Съобщение:</label><br>
+                <textarea id="message" name="message" rows="5" required></textarea><br><br>
+
+                <input type="submit" value="Изпрати">
+            </form>
         </section>
     </main>
 

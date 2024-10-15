@@ -18,3 +18,14 @@ function changeSlide(direction) {
 
 // Optional: Auto-change slides every 3 seconds
 setInterval(() => changeSlide(1), 3000);
+
+document.querySelectorAll('.fade-link').forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.body.classList.add('fade-out');
+      setTimeout(() => {
+        window.location.href = this.href;
+      }, 200); // Adjust time to match animation duration
+    });
+  });
+

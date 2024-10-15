@@ -12,6 +12,12 @@ body {
     color: #333;
     line-height: 1.6;
     font-size: 18px;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.fade-out {
+    opacity: 0;
 }
 
 .container {
@@ -27,23 +33,35 @@ header {
     padding: 40px 0;
     text-align: center;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-header h1 {
-    font-size: 3.5rem;
-    margin-bottom: 20px;
+/* Logo container to position the logo on the left */
+.logo-container {
+    position: absolute;
+    left: 20px; /* Adjust as necessary */
 }
 
+/* Logo */
+.logo img {
+    width: 170px;
+}
+
+/* Centered Navigation */
 nav ul {
     color: white;
     list-style-type: none;
     display: flex;
     justify-content: center;
     gap: 30px;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
-    color: white;
     font-size: 1.4rem;
 }
 
@@ -57,7 +75,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #1e7e34;
+    background-color: #175e27;
 }
 
 /* Main Content Styles */
@@ -102,19 +120,91 @@ section:last-child {
     margin-bottom: 0;
 }
 
+/* Contact Form Styles */
+form {
+    display: grid; /* Use grid layout for better control */
+    grid-template-columns: 1fr; /* Single column layout */
+    gap: 15px; /* Space between form elements */
+    max-width: 600px; /* Limit width for better compactness */
+    margin: 0 auto; /* Center the form */
+}
+
+label {
+    font-weight: bold;
+    color: #cfcfcf;
+}
+
+/* Input and Textarea Styles */
+input[type="text"],
+input[type="email"],
+textarea {
+    padding: 12px; /* Slightly increased padding for comfort */
+    border: 1px solid #333;
+    border-radius: 8px; /* More rounded corners for a modern look */
+    font-size: 1rem;
+    color: #333;
+    background-color: #ffffff;
+    transition: border 0.3s ease, box-shadow 0.3s ease; /* Smooth transition effects */
+}
+
+/* Focus State */
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border: 1px solid #28a745; /* Highlight border color */
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Soft shadow for depth */
+    outline: none; /* Remove default outline */
+}
+
+/* Textarea Styles */
+textarea {
+    resize: none; /* Disable resizing for a cleaner layout */
+    height: 150px; /* Fixed height for consistency */
+}
+
 /* Button Styles */
-a.button {
-    display: inline-block;
+input[type="submit"] {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 0; /* Vertically center the text */
+    border: none;
+    border-radius: 8px; /* Match with other inputs */
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Add transform for button press effect */
+}
+
+/* Hover Effect */
+input[type="submit"]:hover {
+    background-color: #1e7e34; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Responsive Styles for Smaller Screens */
+@media (max-width: 600px) {
+    form {
+        gap: 10px; /* Reduced gap on smaller screens */
+    }
+    
+    input[type="submit"] {
+        padding: 10px 0; /* Adjust button padding for smaller screens */
+    }
+}
+
+
+/* Button Styles */
+input[type="submit"] {
     background-color: #28a745;
     color: white;
     padding: 12px 30px;
+    border: none;
     border-radius: 5px;
-    text-decoration: none;
+    cursor: pointer;
     font-size: 1.1rem;
     transition: background-color 0.3s ease;
 }
 
-a.button:hover {
+input[type="submit"]:hover {
     background-color: #1e7e34;
 }
 
