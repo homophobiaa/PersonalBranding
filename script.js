@@ -29,7 +29,7 @@ document.querySelectorAll('.fade-link').forEach(link => {
     });
   });
 
-// script.js
+// fade in
 document.addEventListener('DOMContentLoaded', function () {
   document.body.classList.add('fade-in');
 });

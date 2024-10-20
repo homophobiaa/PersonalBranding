@@ -342,6 +342,6 @@ footer a:hover {
 }
 
 .fade-in {
-    animation: fadeIn 0.5s ease forwards; /* Adjust duration as needed */
+    animation: fadeIn 0.8s ease forwards; /* Adjust duration as needed */
 }
 

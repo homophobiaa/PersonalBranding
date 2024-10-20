@@ -183,3 +183,17 @@ button:focus, select:focus {
 .logo img {
     width: 250px;
 }
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.8s ease forwards; /* Adjust duration as needed */
+}
