@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="gamestyle.css">
+    <script src="game.js" defer></script>
+</head>
+<body>
+    <h1>Tic Tac Toe</h1>
+    <div class="h1" id="message">Ход на играч X</div>
+    <div id="board"></div>
+    <button id="reset">Рестартиране</button>
+    <section>
+        <h2>Game Mode</h2>
+        <label for="gameMode">Изберете режим на игра:</label>
+        <select id="gameMode" onchange="changeGameMode()">
+            <option value="player">Двама играчи</option>
+            <option value="computer" selected>Играч срещу компютър</option>
+        </select>
+    </section>
+    
+    <script src="game.js"></script>
+</body>
+</html>

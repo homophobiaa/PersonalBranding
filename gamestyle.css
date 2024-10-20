@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #272626;
+    margin: 0;
+}
+
+h1, .h1{
+    color:white;
+}
+
+#board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px); /* 3 columns */
+    grid-template-rows: repeat(3, 100px); /* 3 rows */
+    gap: 5px; /* Space between squares */
+    margin: 20px;
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+    background-color: #ffffff;
+    border: 2px solid #000;
+    font-size: 36px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.square:hover {
+    background-color: rgb(124, 124, 124); /* Light hover effect */
+}
+
+.winning-square-green {
+    background-color: rgba(0, 255, 0, 0.5); /* Light green */
+    animation: winEffect 0.5s ease forwards;
+}
+.winning-square-green:hover{
+    background-color: rgba(3, 110, 3, 0.5);
+}
+
+.winning-square-red {
+    background-color: rgba(255, 0, 0, 0.5); /* Light red */
+    animation: winEffect 0.5s ease forwards;
+}
+.winning-square-red:hover{
+    background-color: rgba(121, 2, 2, 0.5);
+}
+
+.tie-square {
+    background-color: rgb(255, 255, 108); /* Light yellow for tie effect */
+}
+
+.tie-square:hover {
+    background-color: rgb(143, 143, 13);
+}
+
+@keyframes winEffect {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+select {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px 0;
+    font-size: 1rem;
+}
