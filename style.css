@@ -47,7 +47,7 @@ header {
 
 /* Logo */
 .logo img {
-    width: 170px;
+    width: 250px;
 }
 
 /* Centered Navigation */
@@ -95,7 +95,7 @@ li {
 h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color: #28a745;
+    color: #34d85b;
     border-bottom: 2px solid #28a745;
     padding-bottom: 10px;
 }
@@ -330,3 +330,18 @@ footer a:hover {
 .carousel button:hover {
     background-color: rgb(63, 63, 63);
 }
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 0.5s ease forwards; /* Adjust duration as needed */
+}
+

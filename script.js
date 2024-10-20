@@ -29,3 +29,8 @@ document.querySelectorAll('.fade-link').forEach(link => {
     });
   });
 
+// script.js
+document.addEventListener('DOMContentLoaded', function () {
+  document.body.classList.add('fade-in');
+});
+

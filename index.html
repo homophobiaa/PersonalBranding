@@ -5,15 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Личен Брандинг - Деян Илков</title>
     <link rel="stylesheet" href="style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-    <script src="script.js"></script>
-
+    <script src="script.js" defer></script> <!-- Using defer to ensure script loads after HTML -->
 </head>
 <body>
     <header>
         <div class="logo-container">
             <a class="logo" href="./index.html">
-                <img src="./media/logo.png">
+                <img src="./media/logo.png" alt="Logo">
             </a>
         </div>
         <nav>
@@ -24,12 +22,11 @@
             </ul>
         </nav>
     </header>    
-    
 
     <main>
         <section>
             <h2>Кой съм аз?</h2>
-            <p>Аз съм Деян Илков. Изучавам програмиране (C#, HTML и CSS) от 2022 във ЧПГДН "Софтуни Будител". </p>
+            <p>Аз съм Деян Илков. Изучавам програмиране (C#, HTML и CSS) от 2022 във ЧПГДН "Софтуни Будител".</p>
         </section>
     </main>
 
@@ -39,12 +36,11 @@
             <section class="carousel">
                 <div class="carousel-container">
                     <div class="carousel-images">
-                        <img src="./media/desk.jpg" alt="Image 1" class="active">
-                        <img src="./media/kickhub-frontpage.png" alt="Image 2">
-                        <img src="./media/window.jpg" alt="Image 3">
-                        <img src="./media/kickhub-instagram.png" alt="Image 4">
-                        <img src="./media/electronics.jpg" alt="Image 5">
-                        <!-- Add more images as needed -->
+                        <img src="./media/desk.jpg" alt="Image 1" class="active" loading="lazy">
+                        <img src="./media/kickhub-frontpage.png" alt="Image 2" loading="lazy">
+                        <img src="./media/window.jpg" alt="Image 3" loading="lazy">
+                        <img src="./media/kickhub-instagram.png" alt="Image 4" loading="lazy">
+                        <img src="./media/electronics.jpg" alt="Image 5" loading="lazy">
                     </div>
                     <button class="prev" onclick="changeSlide(-1)">&#10094;</button>
                     <button class="next" onclick="changeSlide(1)">&#10095;</button>
@@ -52,11 +48,9 @@
             </section>
         </main>
     </div>
-    
 
     <footer>
         <p>© 2024 Deyan Ilkov</p>
     </footer>
-
 </body>
 </html>
