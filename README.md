@@ -1,6 +1,7 @@
-# [Personal Branding Website](https://deyanilkov.com)
+# Personal Branding Website
 
-This is my personal branding website, built with HTML, CSS, and JavaScript. The site features a main page, a projects showcase, a contact page, and an interactive game. 
+This is my personal branding website, built with HTML, CSS, and JavaScript. The site features a main page, a projects showcase, a contact page, and an interactive game.
+You can visit it at [deyanilkov.com](https://deyanilkov.com) .
 
 ## Features
 
