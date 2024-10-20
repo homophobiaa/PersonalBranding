@@ -28,7 +28,7 @@ body {
 
 /* Header Styles */
 header {
-    background-color: #252525;
+    background-color: #5b5a5a38;
     color: white;
     padding: 40px 0;
     text-align: center;
@@ -81,7 +81,7 @@ nav ul li a:hover {
 /* Main Content Styles */
 main {
     margin: 50px 0;
-    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.365);
     border-radius: 15px;
     padding: 40px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
@@ -210,7 +210,7 @@ input[type="submit"]:hover {
 
 /* Footer Styles */
 footer {
-    background-color: #484d49;
+    background-color: #ffffff38;
     color: white;
     padding: 30px 0;
     text-align: center;

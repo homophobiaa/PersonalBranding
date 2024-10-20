@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" href="gamestyle.css">
+    <link rel="stylesheet" href="../blob/blob.css">
+
+    <script src="game.js" defer></script>
+    <script src="../blob/blob.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <a class="logo" href="../index.html">
+                <img src="../media/logo.png" alt="Logo">
+            </a>
+        </div>
+    </header>
+    <div class="container">
+        <h1>Tic Tac Toe</h1>
+        <div id="message" class="h1">Ход на играч X</div>
+        <div id="board"></div>
+        <button id="reset" class="controls">Рестартиране</button>
+    </div>
+
+    <section class="mode-section">
+        <h2>Game Mode</h2>
+        <label for="gameMode">Изберете режим на игра:</label>
+        <select id="gameMode" onchange="changeGameMode()">
+            <option value="player">Двама играчи</option>
+            <option value="computer" selected>Играч срещу компютър</option>
+        </select>
+    </section>
+
+    <div class="blob"></div>
+</body>
+</html>
