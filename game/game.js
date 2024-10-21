@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
     let gameActive = true;
     let boardState = ["", "", "", "", "", "", "", "", ""];
     let singlePlayerMode = true; // True for single player, false for two players
+    let playerTurnActive = true; // To prevent player clicks during the PC turn
 
     const winningConditions = [
         [0, 1, 2],
@@ -32,8 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function handleSquareClick(event) {
+        if (!playerTurnActive || !gameActive) return; // Block clicks during PC turn and when game is inactive
+
         const index = event.target.dataset.index;
-        if (boardState[index] || !gameActive) return;
+        if (boardState[index]) return; // Prevent clicking already filled squares
 
         boardState[index] = currentPlayer;
         event.target.textContent = currentPlayer;
@@ -41,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
         checkResult();
 
         if (gameActive && singlePlayerMode) {
+            playerTurnActive = false; // Disable player turn during PC's move
             currentPlayer = "O"; // Switch to computer
             message.textContent = "Ход на компютъра...";
             setTimeout(computerMove, 1000); // Delay for computer move
@@ -53,6 +57,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function computerMove() {
         const bestMove = getBestMove();
         makeMove(bestMove);
+        playerTurnActive = true; // Re-enable player's turn after the PC moves
     }
 
     function getBestMove() {
@@ -179,6 +184,7 @@ document.addEventListener("DOMContentLoaded", function () {
         boardState = ["", "", "", "", "", "", "", "", ""];
         currentPlayer = "X";
         gameActive = true;
+        playerTurnActive = true; // Re-enable the player turn
         message.textContent = `Ход на играч ${currentPlayer}`;
         createBoard();
     });
