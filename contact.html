@@ -38,19 +38,27 @@
 
         <section>
             <h2>Свържете се с мен</h2>
-            <form action="https://formspree.io/f/mldeddgj" method="post">
-                <label for="name">Име:</label><br>
-                <input type="text" id="name" name="name" required><br><br>
-
-                <label for="email">Електронна поща:</label><br>
-                <input type="email" id="email" name="email" required><br><br>
-
-                <label for="message">Съобщение:</label><br>
-                <textarea id="message" name="message" rows="5" required></textarea><br><br>
-
+            <form action="https://formspree.io/f/mldeddgj" method="POST">
+                <div class="form-left">
+                    <label for="name">Име:</label>
+                    <input type="text" id="name" name="name" placeholder="Вашето име" required>
+                    
+                    <label for="email">Електронна поща:</label>
+                    <input type="email" id="email" name="email" placeholder="Вашата поща" required>
+                    
+                    <label for="phone">Телефонен номер:</label>
+                    <input type="phone" id="phone" name="phone" placeholder="Вашият номер">
+                </div>
+            
+                <div class="form-right">
+                    <label for="message">Съобщение:</label>
+                    <textarea id="message" name="message" placeholder="Вашето съобщение" required></textarea>
+                </div>
+            
                 <input type="submit" value="Изпрати">
             </form>
         </section>
+        
     </main>
 
     <div class="blob"></div>
