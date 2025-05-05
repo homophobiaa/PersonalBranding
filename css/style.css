@@ -149,6 +149,23 @@ details {
     user-select: none;
   }
 
+.links, .links-large{
+    color: rgb(159, 184, 252);
+    text-decoration: none; /* Optional: removes underline */
+    display: inline-block; /* Required for transform to work */
+    transition: transform 0.3s ease, color 0.3s ease; /* Smooth transition for transform and color */
+}
+
+.links:hover{
+    color: rgb(255, 255, 255);
+    transform: scale(1.4) rotate(5deg) translateX(1rem); /* Enlarge (scale) and tilt (rotate) */
+}
+
+.links-large:hover{
+    color: rgb(255, 255, 255);
+    transform: scale(1.4) rotate(5deg) translateX(3rem); /* Enlarge (scale) and tilt (rotate) */
+}
+
 .deramedia{
     max-height: 350px;
     margin-bottom: 40px;
