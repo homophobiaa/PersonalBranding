@@ -6,8 +6,6 @@
     <title>Проекти - Деян Илков</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./blob/blob.css">
-    <link rel="stylesheet" href="./css/styling.scss">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="./javascript/script.js"></script>
     <script src="./blob/blob.js" defer></script>
     <link rel="icon" 
@@ -32,8 +30,8 @@
     </header>    
 
     <main>
-        <section>
-            <h2>Проект - <a href="https://github.com/homophobiaa/drawbot">Derabot Github</a></h2>
+        <details>
+            <summary style="font-size: 1.5rem; font-weight: bold;">Проект - <a href="https://github.com/homophobiaa/drawbot">Derabot Github</a></summary>
 
             <p>През април 2024 г. стартирах проект, наречен „Derabot“, с моите съученици Радослав Митов и Димитър Илиев. Целта ни е да създадем роботизирана система, способна да рисува върху различни повърхности.</p>
 
@@ -59,37 +57,160 @@
                 <img src="./media/electronics.jpg" alt="Моята снимка" width="300" style="border-radius: 10%; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);" loading="lazy" class="deramedia">
                 <video src="./media/testing.mp4" controls width="220" style="border-radius: 15px; box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.3);" loading="lazy" class="deramedia"></video>
             </div>
-        <section>
-            <section>
-                <h2>Проект - <a href="https://kickhubbg.com/">Kickhubbg.com</a></h2>
+        </details>
+        <details>
+            <summary style="font-size: 1.5rem; font-weight: bold;">Проект - <a href="https://kickhubbg.com/">Kickhubbg.com</a></summary>
                 <p>Започнах да разработвам Kickhub Bulgaria през Януари 2023. 
                     От тогава аз и екипа сме обслужили над 300 доволни клиента. 
                     Целта ни е всеки да има достъп до любимите му обувки, но на по-достъпни цени.</p>
                     <img src="./media/kickhub-frontpage.png" alt="В прогрес" width="700" style="border-radius: 10%; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);" loading="lazy" class="kickhubimg">
                     <img src="./media/kickhub-instagram.png" alt="Моята снимка" width="700" style="border-radius: 10%; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);" loading="lazy" class="kickhubimg">
-            </section>
+        </details>
+        <!-- <details>
+            <summary><strong>Проект - <a>3D Printing Journey</a></strong></summary>
+                <p>📦 Anet A8 (ноември 2019 – лято 2021)
+                    Първият ми принтер беше Anet A8 – взех го чрез размяна срещу high-end RC кола, когато бях едва на 11. Беше просто комплект от части – всичко трябваше да се сглобява от нулата, а интерфейсът беше трагичен. Повечето неща не ставаха, но това ме научи на търпение, ровене по форуми и първите крачки в FDM света. За възрастта си и липсата на опит, направих каквото можах.
+                    </p>
+        </details> -->
+        <details id="my-3d-journey">
+            <summary style="font-size: 1.5rem; font-weight: bold;">Проект - 3D Printing Journey</summary>
+            <div style="margin-top: 1rem;">
+          
+              <!-- Anet A8 -->
+              <details>
+                <summary>📦 Anet A8 (ноември 2019 – лято 2021)</summary>
+                <p>
+                  Първият ми принтер беше Anet A8 – взех го чрез размяна срещу high-end RC кола, когато бях едва на 11. 
+                  Беше просто комплект от части – всичко трябваше да се сглобява от нулата, а интерфейсът беше трагичен. 
+                  Повечето неща не ставаха, но това ме научи на търпение, ровене по форуми и първите крачки в FDM света. 
+                  За възрастта си и липсата на опит, направих каквото можах.
+                </p>
+                <div class="media-row">
+                  <img src="media/3DPrinting/AnetA8/anet-a8-1.jpg" alt="Anet A8 photo 1">
+                  <img src="media/3DPrinting/AnetA8/anet-a8-2.jpg" alt="Anet A8 photo 2">
+                  <img src="media/3DPrinting/AnetA8/anet-a8-3.jpg" alt="Anet A8 photo 3">
+                </div>
+              </details>
+          
+              <!-- BIQU B1 -->
+              <details>
+                <summary>🛠️ BIQU B1 (декември 2021 – януари 2025)</summary>
+                <p>
+                  След като продадох Anet-а, минах на чисто нов BIQU B1 – и това беше ден и нощ. 
+                  Всичко работеше, и за първи път можех да отпечатвам реално използваеми неща. 
+                  Печатах много – части за хобита, подаръци, дори пробвах 3D моделиране в Tinkercad (в началото не много успешно). 
+                  Това беше работният ми принтер с най-много отпечатани часове и реални резултати.
+                </p>
+                <div class="media-row">
+                  <img src="media/3DPrinting/BiquB1/biqu-1.jpg" alt="BIQU B1 photo">
+                  <img src="media/3DPrinting/BiquB1/biqu-2.jpg" alt="BIQU B1 photo">
+                </div>
+              </details>
+          
+              <!-- Ender 3 Neo -->
+              <details>
+                <summary>⚙️ Ender 3 Neo с Klipper (декември 2024 – февруари 2025)</summary>
+                <p>
+                  Около Коледа 2024 реших, че е време да сбъдна една стара мечта – да си направя бърз Klipper-базиран принтер. 
+                  Намерих евтин Creality Ender 3 Neo, който не работеше. Използвах Raspberry Pi Zero 2W от проекта DeraBot, 
+                  качих му Mainsail, което си беше предизвикателство за мен, и продължих оттам.
+                </p>
+                <div style="padding-left: 1rem;">
+                    <ul>
+                      <li>🔧 <strong>Hotend:</strong> Phaetus Dragonfly</li>
+                      <li>🌀 <strong>Direct drive:</strong> временно със стоковия екструдер</li>
+                      <li>🔩 <strong>Механика:</strong> Dual Z, PEI bed, подсилени мотори</li>
+                      <li>🧠 <strong>Електроника:</strong> BTT SKR Mini E3 V3 + TMC2209</li>
+                      <li>🔌 <strong>PSU:</strong> по-мощно захранване</li>
+                      <li>🧊 <strong>Кулер системи:</strong> custom-designed от мен в Tinkercad</li>
+                    </ul>
+                  </div>
+                <p>
+                  Създадох собствено Klipper macro за high-speed motion тест. Имам видео от теста – изглежда доста сериозно. 
+                  А най-впечатляващото: успях да направя Benchy за 25 минути. В крайна сметка машината се доближаваше до high-end принтери като поведение. 
+                  След цялото модване, продадох го на печалба.
+                </p>
+                <div class="media-row-ender">
+                  <img src="media/3DPrinting/Ender3/ender-1.jpg" alt="Ender 3 Neo photo 1">
+                  <img src="media/3DPrinting/Ender3/ender-2.jpg" alt="Ender 3 Neo photo 2">
+                  <img src="media/3DPrinting/Ender3/ender-3.jpg" alt="Ender 3 Neo photo 3">
+                  <video controls src="media/3DPrinting/Ender3/ender-4.mp4"></video>
+                </div>
+              </details>
+          
+              <!-- Bambu Lab P1P -->
+              <details>
+                <summary>⚡ Bambu Lab P1P с AMS (февруари 2025 – до днес)</summary>
+                <p>
+                  След Ender-а търсех нещо, което да оправя и продам за печалба, но попаднах на обява за Bambu Lab P1P с AMS и custom enclosure за 1400 лв. 
+                  Свалих я на само 1100 лв и го взех още на следващия ден. Беше гейм чейнджър.
+                </p>
+                <p>
+                  Bambu Lab-а просто беше в друга категория – автоматични калибрации и нула проблеми. Интерфейсът беше като от бъдещето, 
+                  AMS-ът сменяше филаментите автоматично, скоростта и качеството бяха несравними. 
+                  В този момент разбрах, че не искам да си губя времето с експерименти – и продадох BIQU B1, въпреки сантименталната стойност.
+                </p>
+                <p>
+                  Най-важното е, че понеже не трябваше да се занимавам с настройки и ремонти, започнах да се уча сериозно на Autodesk Fusion 360. 
+                  Самостоятелно стигнах до ниво, в което можех да правя доста сложни модели и дори направих части по поръчка за няколко човека. 
+                  Това ми отвори нови възможности.
+                </p>
+                <div class="media-row">
+                  <img src="media/3DPrinting/BBLP1/bbl-1.jpg" alt="Bambu Lab P1P photo 1">
+                  <img src="media/3DPrinting/BBLP1/bbl-2.gif" alt="Bambu Lab P1P photo 2">
+                  <video controls src="media/3DPrinting/BBLP1/bbl-3.mp4"></video>
+                </div>
+              </details>
+          
+            </div>
+          </details>
+          <details>
+            <summary style="font-size: 1.5rem; font-weight: bold;">Проект - ⛏️ Ethereum Mining Rig</summary>
+            <p>През февруари 2021 случайно попаднах на информация, че Ethereum набира сериозен ръст, а копаенето тепърва се засилва – точно преди световния GPU недостиг. Вече имах добра видеокарта (RTX 2070), така че си казах: „Изглежда лесно, защо да не опитам?“</p>
+
+            <p>Настроих <strong>Claymore Miner</strong> с <strong>Ethermine</strong> пул на личния си компютър. След няколко седмици вече бях изкарал над 150 лв. пасивно. Това ме вкара надълбоко – не просто в самото копаене, а в изграждането и оптимизирането на ригове. Вече имах опит със сглобяване и ъпгрейд на PC-та, но тук стана по-сериозно.</p>
+          
+            <p>На 12 години събрах всичките си спестявания и от приятел на баща ми купих евтини части – дъно, процесор, RAM, и две захранвания. Едното използвах с paperclip trick, за да мога да добавя още видеокарти по-късно. Взех и дървена DIY рамка, както и една GTX 1070 втора ръка – толкова можех да си позволя тогава.</p>
+          
+            <p>Ригът работеше денонощно в гаража, и да, плащах си тока сам – не го крадях от родителите ми 😅.</p>
+          
+            <p>След известно време мигрирах системата към <strong>HiveOS</strong> – Linux-базирана професионална платформа за риг мениджмънт. Това беше огромен ъпгрейд:</p>
+
+            <div style="padding-left: 1rem;">
+            <ul>
+              <li>Следях хашрейта и температурите в реално време</li>
+              <li>Прилагах BIOS модове и overclock/undervolt профили</li>
+              <li>Работех с bash скриптове и автоматични рестарти при fail</li>
+              <li>Настройвах рутер и локална мрежа за стабилна връзка</li>
+            </ul>
+            </div>
+            <p><strong>HiveOS</strong> ми даде практически опит в remote системна администрация и мрежова поддръжка – супер полезно за начинаещ програмист.</p>
+          
+            <p>С времето купувах и препродавах още видеокарти. През октомври 2021, преди Ethereum да премине към Proof of Stake, усетих, че цените ще паднат рязко – и продадох всичко малко преди пика.</p>
+          
+            <p>Единственото, за което понякога се чудя, е дали не трябваше да помоля баща ми за още пари и да разширя рига. Но съм горд, че направих всичко сам – без външен капитал, без заеми, с реален резултат и ценен технически опит.</p>
+          
+            <div class="media-row">
+                <img src="media/Mining/miner1.jpg" alt="Ethereum Mining Rig Image 1">
+                <img src="media/Mining/miner2.jpg" alt="Ethereum Mining Rig Image 2">
+                <img src="media/Mining/miner3.jpg" alt="Ethereum Mining Rig Image 3">
+                <img src="media/Mining/miner4.jpg" alt="Ethereum Mining Rig Image 4">
+                <img src="media/Mining/miner5.jpg" alt="Ethereum Mining Rig Image 5">
+                <img src="media/Mining/miner6.jpg" alt="Ethereum Mining Rig Image 6">
+                <img src="media/Mining/miner7.jpg" alt="Ethereum Mining Rig Image 7">
+                <img src="media/Mining/miner8.jpg" alt="Ethereum Mining Rig Image 8">
+            </div>
+
+          </details>
+          
+          
             
     </main>
 
     <div class="blob"></div>
 
-    
     <footer>
         <p>© 2024 Deyan Ilkov</p>
-        <div class="social-icons">
-            <a href="https://facebook.com" target="_blank" class="icon facebook">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-            <a href="https://twitter.com" target="_blank" class="icon twitter">
-              <i class="fab fa-twitter"></i>
-            </a>
-            <a href="https://linkedin.com" target="_blank" class="icon linkedin">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-            <a href="https://instagram.com" target="_blank" class="icon instagram">
-              <i class="fab fa-instagram"></i>
-            </a>
-          </div>
     </footer>
 </body>
 </html>
