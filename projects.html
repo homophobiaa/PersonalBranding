@@ -1,233 +1,483 @@
 <!DOCTYPE html>
 <html lang="bg">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проекти - Деян Илков</title>
-    <link rel="stylesheet" href="./css/base.css">
-    <link rel="stylesheet" href="./css/pages/projects.css">
-    <link rel="stylesheet" href="./assets/effects/blob/blob.css">
-    <script src="./js/script.js" defer></script>
-    <script src="./assets/effects/blob/blob.js" defer></script>
-    <link rel="icon" 
-    type="image/png" 
-    href="./assets/icons/favicon-16x16.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проекти - Деян Илков</title>
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/pages/projects.css">
+  <link rel="stylesheet" href="./assets/effects/blob/blob.css">
+  <script src="./js/script.js" defer></script>
+  <script src="./assets/effects/blob/blob.js" defer></script>
+  <link rel="icon" type="image/png" href="./assets/icons/favicon-16x16.png">
 </head>
+
 <body>
-    <header>
-        <div class="logo-container">
-            <a class="logo" href="./index.html">
-                <img src="./assets/images/logo.png">
-            </a>
+  <header>
+    <div class="logo-container">
+      <a class="logo" href="./index.html">
+        <img src="./assets/images/logo.png">
+      </a>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Начало</a></li>
+        <li><a href="projects.html">Проекти</a></li>
+        <li><a href="contact.html">Контакти</a></li>
+        <li><a href="game.html">Игра</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="projects-main">
+    <section class="projects-hero">
+      <h1 class="projects-title" aria-label="Projects">PROJECTS</h1>
+      <p class="projects-subtitle"></p>
+    </section>
+
+    <details class="project" id="project-derabot">
+      <summary class="project__summary">Проект - <a href="https://github.com/homophobiaa/drawbot">Derabot Github</a>
+      </summary>
+
+      <div class="project__body">
+
+        <p>През април 2024 г. стартирах проект, наречен „Derabot“, с моите съученици Радослав Митов и Димитър Илиев.
+          Целта ни е да създадем роботизирана система, способна да рисува върху различни повърхности.</p>
+
+        <p><strong>Основни характеристики</strong></p>
+        <ul>
+          <li><strong>Многостранно рисуване:</strong> Derabot се адаптира към различни повърхности, подходящ за класни
+            стаи, стени и платна.</li>
+          <li><strong>Бързо закрепване:</strong> Закрепва се сигурно с две вакуумни скоби за по-малко от две минути.
+          </li>
+          <li><strong>Удобно управление:</strong> Работи чрез мобилен графичен потребителски интерфейс (GUI) за лесно
+            управление от смартфон.</li>
+        </ul>
+        <br>
+        <p><strong>Бъдещи приложения</strong></p>
+        <ul>
+          <li><strong>Образование:</strong> За визуални помощни средства и интерактивно рисуване.</li>
+          <li><strong>Строителство:</strong> За маркировка и художествени подобрения.</li>
+          <li><strong>Артистични проекти:</strong> За съвместни инсталации и обществени проекти.</li>
+        </ul>
+
+        <p class="disclaimer">* Забележка: Кодът за проекта в GitHub е взаимстван от проекта на "Andy wise" - Drawbot,
+          макар и значително променен поради различни части.</p>
+
+        <div class="deramedia" aria-label="Derabot media">
+          <img src="./assets/images/desk.jpg" alt="В прогрес" width="500" loading="lazy">
+          <img src="./assets/images/window.jpg" alt="Derabot on window" width="500" loading="lazy">
+          <img src="./assets/images/electronics.jpg" alt="Electronics" width="300" loading="lazy">
+          <video src="./assets/video/testing.mp4" controls width="220" preload="metadata"></video>
         </div>
-        <nav>
-            <ul>
-                <li><a href="index.html">Начало</a></li>
-                <li><a href="projects.html">Проекти</a></li>
-                <li><a href="contact.html">Контакти</a></li>
-                <li><a href="game.html">Игра</a></li>
-            </ul>
-        </nav>
-    </header>    
+      </div>
+    </details>
 
-    <main class="projects-main">
-        <section class="projects-hero">
-            <h1 class="projects-title" aria-label="Projects">PROJECTS</h1>
-            <p class="projects-subtitle"></p>
-        </section>
-
-        <details class="project" id="project-derabot">
-            <summary class="project__summary">Проект - <a href="https://github.com/homophobiaa/drawbot">Derabot Github</a></summary>
-
-            <div class="project__body">
-
-            <p>През април 2024 г. стартирах проект, наречен „Derabot“, с моите съученици Радослав Митов и Димитър Илиев. Целта ни е да създадем роботизирана система, способна да рисува върху различни повърхности.</p>
-
-            <p><strong>Основни характеристики</strong></p>
-            <ul>
-                <li><strong>Многостранно рисуване:</strong> Derabot се адаптира към различни повърхности, подходящ за класни стаи, стени и платна.</li>
-                <li><strong>Бързо закрепване:</strong> Закрепва се сигурно с две вакуумни скоби за по-малко от две минути.</li>
-                <li><strong>Удобно управление:</strong> Работи чрез мобилен графичен потребителски интерфейс (GUI) за лесно управление от смартфон.</li>
-            </ul>
-            <br>
-            <p><strong>Бъдещи приложения</strong></p>
-            <ul>
-                <li><strong>Образование:</strong> За визуални помощни средства и интерактивно рисуване.</li>
-                <li><strong>Строителство:</strong> За маркировка и художествени подобрения.</li>
-                <li><strong>Артистични проекти:</strong> За съвместни инсталации и обществени проекти.</li>
-            </ul>            
-            
-            <p class="disclaimer">* Забележка: Кодът за проекта в GitHub е взаимстван от проекта на "Andy wise" - Drawbot, макар и значително променен поради различни части.</p>
-
-            <div class="deramedia" aria-label="Derabot media">
-                <img src="./assets/images/desk.jpg" alt="В прогрес" width="500" loading="lazy">
-                <img src="./assets/images/window.jpg" alt="Derabot on window" width="500" loading="lazy">
-                <img src="./assets/images/electronics.jpg" alt="Electronics" width="300" loading="lazy">
-                <video src="./assets/video/testing.mp4" controls width="220" preload="metadata"></video>
-            </div>
-            </div>
-        </details>
-
-        <details class="project" id="project-kickhub">
-            <summary class="project__summary">Проект - <a href="https://kickhubbg.com/">Kickhubbg.com</a></summary>
-            <div class="project__body">
-                <p>Започнах да разработвам Kickhub Bulgaria през Януари 2023. 
-                    От тогава аз и екипа сме обслужили над 300 доволни клиента. 
-                    Целта ни е всеки да има достъп до любимите му обувки, но на по-достъпни цени.</p>
-                    <div class="kickhub-media">
-                        <img src="./assets/images/kickhub-frontpage.png" alt="Kickhub frontpage" width="700" loading="lazy" class="kickhubimg">
-                        <img src="./assets/images/kickhub-instagram.png" alt="Kickhub instagram" width="700" loading="lazy" class="kickhubimg">
-                    </div>
-            </div>
-        </details>
-        <!-- <details>
+    <details class="project" id="project-kickhub">
+      <summary class="project__summary">Проект - <a href="https://kickhubbg.com/">Kickhubbg.com</a></summary>
+      <div class="project__body">
+        <p>Започнах да разработвам Kickhub Bulgaria през Януари 2023.
+          От тогава аз и екипа сме обслужили над 300 доволни клиента.
+          Целта ни е всеки да има достъп до любимите му обувки, но на по-достъпни цени.</p>
+        <div class="kickhub-media">
+          <img src="./assets/images/kickhub-frontpage.png" alt="Kickhub frontpage" width="700" loading="lazy"
+            class="kickhubimg">
+          <img src="./assets/images/kickhub-instagram.png" alt="Kickhub instagram" width="700" loading="lazy"
+            class="kickhubimg">
+        </div>
+      </div>
+    </details>
+    <!-- <details>
             <summary><strong>Проект - <a>3D Printing Journey</a></strong></summary>
                 <p>📦 Anet A8 (ноември 2019 – лято 2021)
                     Първият ми принтер беше Anet A8 – взех го чрез размяна срещу high-end RC кола, когато бях едва на 11. Беше просто комплект от части – всичко трябваше да се сглобява от нулата, а интерфейсът беше трагичен. Повечето неща не ставаха, но това ме научи на търпение, ровене по форуми и първите крачки в FDM света. За възрастта си и липсата на опит, направих каквото можах.
                     </p>
         </details> -->
-        <details class="project" id="my-3d-journey">
-            <summary class="project__summary">Проект - 3D Printing Journey</summary>
-            <div class="project__body">
-          
-              <!-- Anet A8 -->
-              <details class="subproject">
-                <summary class="subproject__summary">📦 Anet A8 (ноември 2019 – лято 2021)</summary>
-                <p>
-                  Първият ми принтер беше Anet A8 – взех го чрез размяна срещу high-end RC кола, когато бях едва на 11. 
-                  Беше просто комплект от части – всичко трябваше да се сглобява от нулата, а интерфейсът беше трагичен. 
-                  Повечето неща не ставаха, но това ме научи на търпение, ровене по форуми и първите крачки в FDM света. 
-                  За възрастта си и липсата на опит, направих каквото можах.
-                </p>
-                <div class="media-row">
-                  <img src="./assets/images/3d-printing/anet-a8/anet-a8-1.jpg" alt="Anet A8 photo 1">
-                  <img src="./assets/images/3d-printing/anet-a8/anet-a8-2.jpg" alt="Anet A8 photo 2">
-                  <img src="./assets/images/3d-printing/anet-a8/anet-a8-3.jpg" alt="Anet A8 photo 3">
-                </div>
-              </details>
-          
-              <!-- BIQU B1 -->
-              <details class="subproject">
-                <summary class="subproject__summary">🛠️ BIQU B1 (декември 2021 – януари 2025)</summary>
-                <p>
-                  След като продадох Anet-а, минах на чисто нов BIQU B1 – и това беше ден и нощ. 
-                  Всичко работеше, и за първи път можех да отпечатвам реално използваеми неща. 
-                  Печатах много – части за хобита, подаръци, дори пробвах 3D моделиране в Tinkercad (в началото не много успешно). 
-                  Това беше работният ми принтер с най-много отпечатани часове и реални резултати.
-                </p>
-                <div class="media-row">
-                  <img src="./assets/images/3d-printing/biqu-b1/biqu-1.jpg" alt="BIQU B1 photo">
-                  <img src="./assets/images/3d-printing/biqu-b1/biqu-2.jpg" alt="BIQU B1 photo">
-                </div>
-              </details>
-          
-              <!-- Ender 3 Neo -->
-              <details class="subproject">
-                <summary class="subproject__summary">⚙️ Ender 3 Neo с Klipper (декември 2024 – февруари 2025)</summary>
-                <p>
-                  Около Коледа 2024 реших, че е време да сбъдна една стара мечта – да си направя бърз Klipper-базиран принтер. 
-                  Намерих евтин Creality Ender 3 Neo, който не работеше. Използвах Raspberry Pi Zero 2W от проекта DeraBot, 
-                  качих му Mainsail, което си беше предизвикателство за мен, и продължих оттам.
-                </p>
-                <div style="padding-left: 1rem;">
-                    <ul>
-                      <li>🔧 <strong>Hotend:</strong> Phaetus Dragonfly</li>
-                      <li>🌀 <strong>Direct drive:</strong> временно със стоковия екструдер</li>
-                      <li>🔩 <strong>Механика:</strong> Dual Z, PEI bed, подсилени мотори</li>
-                      <li>🧠 <strong>Електроника:</strong> BTT SKR Mini E3 V3 + TMC2209</li>
-                      <li>🔌 <strong>PSU:</strong> по-мощно захранване</li>
-                      <li>🧊 <strong>Кулер системи:</strong> custom-designed от мен в Tinkercad</li>
-                    </ul>
-                  </div>
-                <p>
-                  Създадох собствено Klipper macro за high-speed motion тест. Имам видео от теста – изглежда доста сериозно. 
-                  А най-впечатляващото: успях да направя Benchy за 25 минути. В крайна сметка машината се доближаваше до high-end принтери като поведение. 
-                  След цялото модване, продадох го на печалба.
-                </p>
-                <div class="media-row-ender">
-                  <img src="./assets/images/3d-printing/ender-3/ender-1.jpg" alt="Ender 3 Neo photo 1">
-                  <img src="./assets/images/3d-printing/ender-3/ender-2.jpg" alt="Ender 3 Neo photo 2">
-                  <img src="./assets/images/3d-printing/ender-3/ender-3.jpg" alt="Ender 3 Neo photo 3">
-                  <video controls src="./assets/video/3d-printing/ender-3/ender-4.mp4"></video>
-                </div>
-              </details>
-          
-              <!-- Bambu Lab P1P -->
-              <details class="subproject">
-                <summary class="subproject__summary">⚡ Bambu Lab P1P с AMS (февруари 2025 – до днес)</summary>
-                <p>
-                  След Ender-а търсех нещо, което да оправя и продам за печалба, но попаднах на обява за Bambu Lab P1P с AMS и custom enclosure за 1400 лв. 
-                  Свалих я на само 1100 лв и го взех още на следващия ден. Беше гейм чейнджър.
-                </p>
-                <p>
-                  Bambu Lab-а просто беше в друга категория – автоматични калибрации и нула проблеми. Интерфейсът беше като от бъдещето, 
-                  AMS-ът сменяше филаментите автоматично, скоростта и качеството бяха несравними. 
-                  В този момент разбрах, че не искам да си губя времето с експерименти – и продадох BIQU B1, въпреки сантименталната стойност.
-                </p>
-                <p>
-                  Най-важното е, че понеже не трябваше да се занимавам с настройки и ремонти, започнах да се уча сериозно на Autodesk Fusion 360. 
-                  Самостоятелно стигнах до ниво, в което можех да правя доста сложни модели и дори направих части по поръчка за няколко човека. 
-                  Това ми отвори нови възможности.
-                </p>
-                <div class="media-row">
-                  <img src="./assets/images/3d-printing/bbl-p1/bbl-1.jpg" alt="Bambu Lab P1P photo 1">
-                  <img src="./assets/images/3d-printing/bbl-p1/bbl-2.gif" alt="Bambu Lab P1P photo 2">
-                  <video controls src="./assets/video/3d-printing/bbl-p1/bbl-3.mp4"></video>
-                </div>
-              </details>
-          
-            </div>
-          </details>
+    <details class="project" id="my-3d-journey">
+      <summary class="project__summary">Проект - 3D Printing Journey</summary>
+      <div class="project__body">
 
-          <details class="project" id="project-mining">
-            <summary class="project__summary">Проект - ⛏️ Ethereum Mining Rig</summary>
-            <div class="project__body">
-            <p>През февруари 2021 случайно попаднах на информация, че Ethereum набира сериозен ръст, а копаенето тепърва се засилва – точно преди световния GPU недостиг. Вече имах добра видеокарта (RTX 2070), така че си казах: „Изглежда лесно, защо да не опитам?“</p>
+        <!-- Anet A8 -->
+        <details class="subproject">
+          <summary class="subproject__summary">📦 Anet A8 (ноември 2019 – лято 2021)</summary>
+          <p>
+            Първият ми принтер беше Anet A8 – взех го чрез размяна срещу high-end RC кола, когато бях едва на 11.
+            Беше просто комплект от части – всичко трябваше да се сглобява от нулата, а интерфейсът беше трагичен.
+            Повечето неща не ставаха, но това ме научи на търпение, ровене по форуми и първите крачки в FDM света.
+            За възрастта си и липсата на опит, направих каквото можах.
+          </p>
+          <div class="media-row">
+            <img src="./assets/images/3d-printing/anet-a8/anet-a8-1.jpg" alt="Anet A8 photo 1">
+            <img src="./assets/images/3d-printing/anet-a8/anet-a8-2.jpg" alt="Anet A8 photo 2">
+            <img src="./assets/images/3d-printing/anet-a8/anet-a8-3.jpg" alt="Anet A8 photo 3">
+          </div>
+        </details>
 
-            <p>Настроих <strong>Claymore Miner</strong> с <strong>Ethermine</strong> пул на личния си компютър. След няколко седмици вече бях изкарал над 150 лв. пасивно. Това ме вкара надълбоко – не просто в самото копаене, а в изграждането и оптимизирането на ригове. Вече имах опит със сглобяване и ъпгрейд на PC-та, но тук стана по-сериозно.</p>
-          
-            <p>На 12 години събрах всичките си спестявания и от приятел на баща ми купих евтини части – дъно, процесор, RAM, и две захранвания. Едното използвах с paperclip trick, за да мога да добавя още видеокарти по-късно. Взех и дървена DIY рамка, както и една GTX 1070 втора ръка – толкова можех да си позволя тогава.</p>
-          
-            <p>Ригът работеше денонощно в гаража, и да, плащах си тока сам – не го крадях от родителите ми 😅.</p>
-          
-            <p>След известно време мигрирах системата към <strong>HiveOS</strong> – Linux-базирана професионална платформа за риг мениджмънт. Това беше огромен ъпгрейд:</p>
+        <!-- BIQU B1 -->
+        <details class="subproject">
+          <summary class="subproject__summary">🛠️ BIQU B1 (декември 2021 – януари 2025)</summary>
+          <p>
+            След като продадох Anet-а, минах на чисто нов BIQU B1 – и това беше ден и нощ.
+            Всичко работеше, и за първи път можех да отпечатвам реално използваеми неща.
+            Печатах много – части за хобита, подаръци, дори пробвах 3D моделиране в Tinkercad (в началото не много
+            успешно).
+            Това беше работният ми принтер с най-много отпечатани часове и реални резултати.
+          </p>
+          <div class="media-row">
+            <img src="./assets/images/3d-printing/biqu-b1/biqu-1.jpg" alt="BIQU B1 photo">
+            <img src="./assets/images/3d-printing/biqu-b1/biqu-2.jpg" alt="BIQU B1 photo">
+          </div>
+        </details>
 
-            <div style="padding-left: 1rem;">
+        <!-- Ender 3 Neo -->
+        <details class="subproject">
+          <summary class="subproject__summary">⚙️ Ender 3 Neo с Klipper (декември 2024 – февруари 2025)</summary>
+          <p>
+            Около Коледа 2024 реших, че е време да сбъдна една стара мечта – да си направя бърз Klipper-базиран принтер.
+            Намерих евтин Creality Ender 3 Neo, който не работеше. Използвах Raspberry Pi Zero 2W от проекта DeraBot,
+            качих му Mainsail, което си беше предизвикателство за мен, и продължих оттам.
+          </p>
+          <div style="padding-left: 1rem;">
             <ul>
-              <li>Следях хашрейта и температурите в реално време</li>
-              <li>Прилагах BIOS модове и overclock/undervolt профили</li>
-              <li>Работех с bash скриптове и автоматични рестарти при fail</li>
-              <li>Настройвах рутер и локална мрежа за стабилна връзка</li>
+              <li>🔧 <strong>Hotend:</strong> Phaetus Dragonfly</li>
+              <li>🌀 <strong>Direct drive:</strong> временно със стоковия екструдер</li>
+              <li>🔩 <strong>Механика:</strong> Dual Z, PEI bed, подсилени мотори</li>
+              <li>🧠 <strong>Електроника:</strong> BTT SKR Mini E3 V3 + TMC2209</li>
+              <li>🔌 <strong>PSU:</strong> по-мощно захранване</li>
+              <li>🧊 <strong>Кулер системи:</strong> custom-designed от мен в Tinkercad</li>
             </ul>
-            </div>
-            <p><strong>HiveOS</strong> ми даде практически опит в remote системна администрация и мрежова поддръжка – супер полезно за начинаещ програмист.</p>
-          
-            <p>С времето купувах и препродавах още видеокарти. През октомври 2021, преди Ethereum да премине към Proof of Stake, усетих, че цените ще паднат рязко – и продадох всичко малко преди пика.</p>
-          
-            <p>Единственото, за което понякога се чудя, е дали не трябваше да помоля баща ми за още пари и да разширя рига. Но съм горд, че направих всичко сам – без външен капитал, без заеми, с реален резултат и ценен технически опит.</p>
-          
-            <div class="media-row">
-                <img src="./assets/images/mining/miner1.jpg" alt="Ethereum Mining Rig Image 1">
-                <img src="./assets/images/mining/miner2.jpg" alt="Ethereum Mining Rig Image 2">
-                <img src="./assets/images/mining/miner3.jpg" alt="Ethereum Mining Rig Image 3">
-                <img src="./assets/images/mining/miner4.jpg" alt="Ethereum Mining Rig Image 4">
-                <img src="./assets/images/mining/miner5.jpg" alt="Ethereum Mining Rig Image 5">
-                <img src="./assets/images/mining/miner6.jpg" alt="Ethereum Mining Rig Image 6">
-                <img src="./assets/images/mining/miner7.jpg" alt="Ethereum Mining Rig Image 7">
-                <img src="./assets/images/mining/miner8.jpg" alt="Ethereum Mining Rig Image 8">
+          </div>
+          <p>
+            Създадох собствено Klipper macro за high-speed motion тест. Имам видео от теста – изглежда доста сериозно.
+            А най-впечатляващото: успях да направя Benchy за 25 минути. В крайна сметка машината се доближаваше до
+            high-end принтери като поведение.
+            След цялото модване, продадох го на печалба.
+          </p>
+          <div class="media-row-ender">
+            <img src="./assets/images/3d-printing/ender-3/ender-1.jpg" alt="Ender 3 Neo photo 1">
+            <img src="./assets/images/3d-printing/ender-3/ender-2.jpg" alt="Ender 3 Neo photo 2">
+            <img src="./assets/images/3d-printing/ender-3/ender-3.jpg" alt="Ender 3 Neo photo 3">
+            <video controls src="./assets/video/3d-printing/ender-3/ender-4.mp4"></video>
+          </div>
+        </details>
+
+        <!-- Bambu Lab P1P -->
+        <details class="subproject">
+          <summary class="subproject__summary">⚡ Bambu Lab P1P с AMS (февруари 2025 – до днес)</summary>
+          <p>
+            След Ender-а търсех нещо, което да оправя и продам за печалба, но попаднах на обява за Bambu Lab P1P с AMS и
+            custom enclosure за 1400 лв.
+            Свалих я на само 1100 лв и го взех още на следващия ден. Беше гейм чейнджър.
+          </p>
+          <p>
+            Bambu Lab-а просто беше в друга категория – автоматични калибрации и нула проблеми. Интерфейсът беше като от
+            бъдещето,
+            AMS-ът сменяше филаментите автоматично, скоростта и качеството бяха несравними.
+            В този момент разбрах, че не искам да си губя времето с експерименти – и продадох BIQU B1, въпреки
+            сантименталната стойност.
+          </p>
+          <p>
+            Най-важното е, че понеже не трябваше да се занимавам с настройки и ремонти, започнах да се уча сериозно на
+            Autodesk Fusion 360.
+            Самостоятелно стигнах до ниво, в което можех да правя доста сложни модели и дори направих части по поръчка
+            за няколко човека.
+            Това ми отвори нови възможности.
+          </p>
+          <div class="media-row">
+            <img src="./assets/images/3d-printing/bbl-p1/bbl-1.jpg" alt="Bambu Lab P1P photo 1">
+            <img src="./assets/images/3d-printing/bbl-p1/bbl-2.gif" alt="Bambu Lab P1P photo 2">
+            <video controls src="./assets/video/3d-printing/bbl-p1/bbl-3.mp4"></video>
+          </div>
+        </details>
+
+      </div>
+    </details>
+
+    <details class="project" id="project-mining">
+      <summary class="project__summary">Проект - ⛏️ Ethereum Mining Rig</summary>
+      <div class="project__body">
+        <p>През февруари 2021 случайно попаднах на информация, че Ethereum набира сериозен ръст, а копаенето тепърва се
+          засилва – точно преди световния GPU недостиг. Вече имах добра видеокарта (RTX 2070), така че си казах:
+          „Изглежда лесно, защо да не опитам?“</p>
+
+        <p>Настроих <strong>Claymore Miner</strong> с <strong>Ethermine</strong> пул на личния си компютър. След няколко
+          седмици вече бях изкарал над 150 лв. пасивно. Това ме вкара надълбоко – не просто в самото копаене, а в
+          изграждането и оптимизирането на ригове. Вече имах опит със сглобяване и ъпгрейд на PC-та, но тук стана
+          по-сериозно.</p>
+
+        <p>На 12 години събрах всичките си спестявания и от приятел на баща ми купих евтини части – дъно, процесор, RAM,
+          и две захранвания. Едното използвах с paperclip trick, за да мога да добавя още видеокарти по-късно. Взех и
+          дървена DIY рамка, както и една GTX 1070 втора ръка – толкова можех да си позволя тогава.</p>
+
+        <p>Ригът работеше денонощно в гаража, и да, плащах си тока сам – не го крадях от родителите ми 😅.</p>
+
+        <p>След известно време мигрирах системата към <strong>HiveOS</strong> – Linux-базирана професионална платформа
+          за риг мениджмънт. Това беше огромен ъпгрейд:</p>
+
+        <div style="padding-left: 1rem;">
+          <ul>
+            <li>Следях хашрейта и температурите в реално време</li>
+            <li>Прилагах BIOS модове и overclock/undervolt профили</li>
+            <li>Работех с bash скриптове и автоматични рестарти при fail</li>
+            <li>Настройвах рутер и локална мрежа за стабилна връзка</li>
+          </ul>
+        </div>
+        <p><strong>HiveOS</strong> ми даде практически опит в remote системна администрация и мрежова поддръжка – супер
+          полезно за начинаещ програмист.</p>
+
+        <p>С времето купувах и препродавах още видеокарти. През октомври 2021, преди Ethereum да премине към Proof of
+          Stake, усетих, че цените ще паднат рязко – и продадох всичко малко преди пика.</p>
+
+        <p>Единственото, за което понякога се чудя, е дали не трябваше да помоля баща ми за още пари и да разширя рига.
+          Но съм горд, че направих всичко сам – без външен капитал, без заеми, с реален резултат и ценен технически
+          опит.</p>
+
+        <div class="media-row">
+          <img src="./assets/images/mining/miner1.jpg" alt="Ethereum Mining Rig Image 1">
+          <img src="./assets/images/mining/miner2.jpg" alt="Ethereum Mining Rig Image 2">
+          <img src="./assets/images/mining/miner3.jpg" alt="Ethereum Mining Rig Image 3">
+          <img src="./assets/images/mining/miner4.jpg" alt="Ethereum Mining Rig Image 4">
+          <img src="./assets/images/mining/miner5.jpg" alt="Ethereum Mining Rig Image 5">
+          <img src="./assets/images/mining/miner6.jpg" alt="Ethereum Mining Rig Image 6">
+          <img src="./assets/images/mining/miner7.jpg" alt="Ethereum Mining Rig Image 7">
+          <img src="./assets/images/mining/miner8.jpg" alt="Ethereum Mining Rig Image 8">
+        </div>
+
+      </div>
+    </details>
+
+
+
+    <details class="project" id="project-llm">
+      <summary class="project__summary">
+        Local LLM Benchmark
+      </summary>
+
+      <div class="project__body llm-body">
+
+        <!-- INTRO -->
+        <div class="llm-section">
+          <p>
+            This project compares GPT-5.2 (cloud) with locally quantized coding models
+            (Qwen3-Coder-Next 80B and DeepSeek-Coder-V2-Lite 16B) running on RTX 4070 Ti.
+            The objective was to evaluate real-world performance, hardware utilization,
+            and output quality using identical prompts.
+          </p>
+        </div>
+
+        <!-- TEST SETUP -->
+        <div class="llm-section">
+          <h4 class="llm-title">Test Setup</h4>
+
+          <div class="llm-specs">
+            <div class="llm-spec">
+              <span class="llm-spec__label">CPU</span>
+              <span class="llm-spec__value">i7-13700K</span>
             </div>
 
+            <div class="llm-spec">
+              <span class="llm-spec__label">RAM</span>
+              <span class="llm-spec__value">64GB DDR5 6400MHz</span>
             </div>
+
+            <div class="llm-spec">
+              <span class="llm-spec__label">GPU</span>
+              <span class="llm-spec__value">RTX 4070 Ti 12GB</span>
+            </div>
+
+            <div class="llm-spec">
+              <span class="llm-spec__label">Software</span>
+              <span class="llm-spec__value">LM Studio (GGUF)</span>
+            </div>
+
+            <div class="llm-spec">
+              <span class="llm-spec__label">Quantization</span>
+              <span class="llm-spec__value">Q4_K_M</span>
+            </div>
+
+            <div class="llm-spec">
+              <span class="llm-spec__label">Context</span>
+              <span class="llm-spec__value">4096</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- METHODOLOGY -->
+        <div class="llm-section">
+          <h4 class="llm-title">Methodology</h4>
+
+          <p>
+            All three models were given the exact same prompt:
+            generate a modern single-file task manager web application
+            (HTML, CSS and JavaScript combined into one file).
+            No manual edits were made to outputs.
+          </p>
+        </div>
+
+        <!-- PROMPT -->
+        <div class="llm-section">
+          <h4 class="llm-title">Prompt Used</h4>
+
+          <details class="llm-prompt">
+            <summary class="llm-prompt__summary">Show benchmark prompt</summary>
+            <pre class="llm-prompt__box">
+Create a complete single-file website using ONLY one HTML file.
+
+Requirements:
+- Everything must be in ONE file.
+- Use internal &lt;style&gt; and &lt;script&gt; tags.
+- Do NOT split into multiple files.
+- No external libraries, no CDN, no frameworks.
+
+Build a modern dark-themed "Task Manager" web app with:
+
+Features:
+1. Add task
+2. Delete task
+3. Mark task as completed
+4. Edit task inline
+5. Persist tasks in localStorage
+6. Show total tasks count
+7. Show completed tasks count
+8. Simple fade-in animation when adding tasks
+9. Responsive layout (works on mobile)
+10. Clean modern UI (rounded corners, smooth transitions)
+
+UI Requirements:
+- Dark background (#121212 style)
+- Accent color (cyan or purple)
+- Smooth hover effects
+- Subtle animations
+- Minimalistic but polished look
+
+Technical Requirements:
+- Use modern vanilla JS (ES6+)
+- Use semantic HTML
+- No unnecessary comments
+- Code must be clean and well structured
+- Avoid global variable pollution
+
+Output:
+Return ONLY the final HTML file code.
+Do NOT include explanations.                
+</pre>
           </details>
-          
-          
-            
-    </main>
+        </div>
 
-    <div class="blob"></div>
+        <!-- RESULTS -->
+        <div class="llm-section">
+          <h4 class="llm-title">Benchmark Results</h4>
 
-    <footer>
-        <p>© 2024 Deyan Ilkov</p>
-    </footer>
+          <div class="llm-benchmark-table">
+            <table>
+              <thead>
+                <tr>
+                  <th>Model</th>
+                  <th>Size (GB)</th>
+                  <th>Quant</th>
+                  <th>Tokens/sec</th>
+                  <th>VRAM Used</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>GPT-5.2 400B</td>
+                  <td>Cloud</td>
+                  <td>—</td>
+                  <td>Fast</td>
+                  <td>Cloud</td>
+                  <td>Structured output</td>
+                </tr>
+                <tr>
+                  <td>Qwen3-Coder-Next 80B</td>
+                  <td>45.16 GB</td>
+                  <td>Q4_K_M</td>
+                  <td>9.31 tok/s</td>
+                  <td>12 GB</td>
+                  <td>Added filtering logic</td>
+                </tr>
+                <tr>
+                  <td>DeepSeek-Coder-V2-Lite 16B</td>
+                  <td>9.65 GB</td>
+                  <td>Q4_K_M</td>
+                  <td>56.73 tok/s</td>
+                  <td>12 GB</td>
+                  <td>Fastest local model</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- OUTPUTS -->
+        <div class="llm-section">
+          <h4 class="llm-title">Generated Outputs</h4>
+
+          <div class="llm-actions">
+            <a class="llm-btn" href="benchmarks/gpt.html" target="_blank">View GPT Version</a>
+            <a class="llm-btn" href="benchmarks/qwen.html" target="_blank">View Qwen Version</a>
+            <a class="llm-btn" href="benchmarks/deepseek.html" target="_blank">View DeepSeek Version</a>
+          </div>
+        </div>
+
+        <!-- CONCLUSION -->
+        <div class="llm-section">
+          <h4 class="llm-title">Conclusion</h4>
+
+          <p>
+            All three models successfully completed the task and produced working results.
+            The 80B model and GPT-5.2 performed very similarly in terms of UI quality, with the 80B model taking a
+            slight lead for this specific prompt.
+            Although it did not strictly follow the instructions and introduced its own filter function, the addition
+            was not necessarily negative.
+            The 16B model handled the logic correctly but showed minor UI issues, making it more suitable for smaller
+            backend tasks or isolated frontend components rather than full-page generation.
+            Cloud models remain the most consistent and faster overall, but the real-world performance gap between them
+            and large local models is noticeably smaller than expected.
+          </p>
+        </div>
+
+        <!-- LM STUDIO SETTINGS -->
+        <div class="llm-section">
+          <h4 class="llm-title">LM Studio Settings</h4>
+
+          <div class="llm-images">
+            <figure class="llm-figure">
+              <img src="./assets/images/llm/qwen3-coder-next-settings.png" class="llm-image">
+              <figcaption>Qwen3-Coder-Next 80B (Q4_K_M)</figcaption>
+            </figure>
+
+            <figure class="llm-figure">
+              <img src="./assets/images/llm/deepseek-coder-v2-lite-settings.png" class="llm-image">
+              <figcaption>DeepSeek-Coder-V2-Lite 16B (Q4_K_M)</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- HARDWARE -->
+        <div class="llm-section">
+          <h4 class="llm-title">Hardware Utilization</h4>
+
+          <p>
+            GPU, CPU and RAM usage during 80B inference:
+          </p>
+
+          <img src="./assets/images/llm/utl.png" class="llm-image">
+        </div>
+
+      </div>
+    </details>
+
+
+  </main>
+
+  <div class="blob"></div>
+
+  <footer>
+    <p>© 2024 Deyan Ilkov</p>
+  </footer>
 </body>
+
 </html>

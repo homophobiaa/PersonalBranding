@@ -1,0 +1,760 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Task Manager</title>
+  <style>
+    :root{
+      --bg:#121212;
+      --panel:#171717;
+      --panel2:#1d1d1d;
+      --text:#eaeaea;
+      --muted:#a6a6a6;
+      --border:rgba(255,255,255,.08);
+      --shadow:0 12px 30px rgba(0,0,0,.35);
+      --accent:#7c4dff; /* purple */
+      --accent2:#27e0ff; /* cyan */
+      --danger:#ff4d6d;
+      --ok:#2ee59d;
+      --radius:16px;
+      --radius-sm:12px;
+      --speed:180ms;
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:
+        radial-gradient(900px 520px at 20% -10%, rgba(124,77,255,.18), transparent 60%),
+        radial-gradient(900px 520px at 90% 10%, rgba(39,224,255,.14), transparent 55%),
+        radial-gradient(600px 460px at 50% 120%, rgba(46,229,157,.08), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      font-family:var(--font);
+      letter-spacing:.2px;
+    }
+
+    .wrap{
+      min-height:100%;
+      display:flex;
+      align-items:stretch;
+      justify-content:center;
+      padding:22px 14px;
+    }
+
+    main{
+      width:min(920px, 100%);
+      display:grid;
+      gap:14px;
+      grid-template-rows:auto auto 1fr;
+    }
+
+    header{
+      background:linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      padding:18px 18px 14px;
+      box-shadow:var(--shadow);
+      position:relative;
+      overflow:hidden;
+      isolation:isolate;
+    }
+
+    header::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background:
+        radial-gradient(600px 300px at 20% 10%, rgba(124,77,255,.22), transparent 60%),
+        radial-gradient(600px 300px at 80% 0%, rgba(39,224,255,.18), transparent 55%);
+      filter:blur(12px);
+      opacity:.65;
+      z-index:-1;
+    }
+
+    .titleRow{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+    }
+
+    h1{
+      margin:0;
+      font-size:clamp(20px, 3.2vw, 28px);
+      font-weight:760;
+      line-height:1.05;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .badge{
+      font-size:12px;
+      color:rgba(255,255,255,.86);
+      background:rgba(255,255,255,.06);
+      border:1px solid rgba(255,255,255,.10);
+      padding:6px 10px;
+      border-radius:999px;
+      display:inline-flex;
+      gap:8px;
+      align-items:center;
+      backdrop-filter: blur(10px);
+    }
+
+    .badgeDot{
+      width:9px;height:9px;border-radius:50%;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 0 3px rgba(124,77,255,.14);
+    }
+
+    .sub{
+      margin:8px 0 0;
+      color:var(--muted);
+      font-size:13.5px;
+      line-height:1.35;
+    }
+
+    .stats{
+      margin-top:14px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.08);
+      padding:9px 12px;
+      border-radius:999px;
+      color:rgba(255,255,255,.9);
+      font-size:13px;
+      transition:transform var(--speed) ease, border-color var(--speed) ease, background var(--speed) ease;
+    }
+    .pill:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.14);
+      background:rgba(255,255,255,.06);
+    }
+
+    .pill strong{
+      font-weight:760;
+      color:var(--text);
+    }
+
+    .card{
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border:1px solid var(--border);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:14px;
+      overflow:hidden;
+    }
+
+    form{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+
+    .inputWrap{
+      position:relative;
+      flex:1;
+      min-width:0;
+    }
+
+    input[type="text"]{
+      width:100%;
+      background:rgba(0,0,0,.20);
+      border:1px solid rgba(255,255,255,.10);
+      color:var(--text);
+      outline:none;
+      padding:13px 14px 13px 40px;
+      border-radius:14px;
+      font-size:14.5px;
+      transition:border-color var(--speed) ease, box-shadow var(--speed) ease, background var(--speed) ease;
+    }
+    input[type="text"]::placeholder{color:rgba(255,255,255,.45)}
+    input[type="text"]:focus{
+      border-color:rgba(124,77,255,.55);
+      box-shadow:0 0 0 4px rgba(124,77,255,.14);
+      background:rgba(0,0,0,.28);
+    }
+
+    .spark{
+      position:absolute;
+      left:12px; top:50%;
+      transform:translateY(-50%);
+      width:18px;height:18px;
+      opacity:.95;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      border-radius:7px;
+      box-shadow:0 8px 18px rgba(124,77,255,.22);
+    }
+
+    button{
+      border:none;
+      cursor:pointer;
+      font:inherit;
+      border-radius:14px;
+      padding:12px 14px;
+      transition:transform var(--speed) ease, filter var(--speed) ease, background var(--speed) ease, box-shadow var(--speed) ease, border-color var(--speed) ease;
+      user-select:none;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .btnPrimary{
+      color:#0c0c0c;
+      background:linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 12px 24px rgba(124,77,255,.16);
+      font-weight:760;
+      min-width:118px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+    }
+    .btnPrimary:hover{
+      transform:translateY(-1px);
+      filter:saturate(1.08);
+      box-shadow:0 16px 30px rgba(124,77,255,.20);
+    }
+    .btnPrimary:active{transform:translateY(0px) scale(.99)}
+
+    .btnGhost{
+      background:rgba(255,255,255,.04);
+      color:rgba(255,255,255,.92);
+      border:1px solid rgba(255,255,255,.10);
+      padding:10px 12px;
+      border-radius:12px;
+    }
+    .btnGhost:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.14);
+      transform:translateY(-1px);
+    }
+
+    .btnDanger{
+      background:rgba(255,77,109,.10);
+      border:1px solid rgba(255,77,109,.20);
+      color:rgba(255,255,255,.92);
+    }
+    .btnDanger:hover{
+      background:rgba(255,77,109,.14);
+      border-color:rgba(255,77,109,.28);
+      transform:translateY(-1px);
+    }
+
+    .listHeader{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:10px;
+    }
+
+    .listHeader h2{
+      margin:0;
+      font-size:14px;
+      color:rgba(255,255,255,.86);
+      font-weight:720;
+      letter-spacing:.3px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+    }
+
+    .hint{
+      color:rgba(255,255,255,.42);
+      font-size:12.5px;
+      margin:0;
+    }
+
+    ul{
+      list-style:none;
+      padding:0;
+      margin:0;
+      display:grid;
+      gap:10px;
+    }
+
+    .empty{
+      padding:18px 12px;
+      text-align:center;
+      color:rgba(255,255,255,.55);
+      border:1px dashed rgba(255,255,255,.14);
+      border-radius:var(--radius);
+      background:rgba(255,255,255,.02);
+    }
+
+    .task{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      gap:10px;
+      align-items:center;
+      padding:12px 12px;
+      border-radius:var(--radius-sm);
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      transition:transform var(--speed) ease, background var(--speed) ease, border-color var(--speed) ease;
+      position:relative;
+      overflow:hidden;
+    }
+    .task:hover{
+      background:rgba(255,255,255,.045);
+      border-color:rgba(255,255,255,.12);
+      transform:translateY(-1px);
+    }
+
+    .task.fadeIn{
+      animation:fadeInUp 240ms ease-out both;
+    }
+
+    @keyframes fadeInUp{
+      from{opacity:0; transform:translateY(6px)}
+      to{opacity:1; transform:translateY(0)}
+    }
+
+    .check{
+      width:20px;height:20px;
+      border-radius:7px;
+      border:1px solid rgba(255,255,255,.18);
+      background:rgba(0,0,0,.18);
+      display:grid;
+      place-items:center;
+      transition:background var(--speed) ease, border-color var(--speed) ease, transform var(--speed) ease;
+      cursor:pointer;
+    }
+    .check:hover{transform:scale(1.03); border-color:rgba(39,224,255,.35)}
+    .check svg{width:14px;height:14px; opacity:0; transform:scale(.6); transition:opacity var(--speed) ease, transform var(--speed) ease}
+
+    .task.completed .check{
+      background:rgba(46,229,157,.16);
+      border-color:rgba(46,229,157,.35);
+    }
+    .task.completed .check svg{
+      opacity:1;
+      transform:scale(1);
+    }
+
+    .text{
+      min-width:0;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .label{
+      min-width:0;
+      font-size:14.5px;
+      line-height:1.25;
+      word-break:break-word;
+      padding:6px 8px;
+      border-radius:10px;
+      outline:none;
+      transition:background var(--speed) ease, box-shadow var(--speed) ease;
+    }
+
+    .label:focus{
+      background:rgba(124,77,255,.12);
+      box-shadow:0 0 0 4px rgba(124,77,255,.14);
+    }
+
+    .task.completed .label{
+      color:rgba(255,255,255,.55);
+      text-decoration:line-through;
+    }
+
+    .actions{
+      display:flex;
+      gap:8px;
+      align-items:center;
+    }
+
+    .iconBtn{
+      width:38px;height:38px;
+      padding:0;
+      display:grid;
+      place-items:center;
+      border-radius:12px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(255,255,255,.10);
+      color:rgba(255,255,255,.9);
+    }
+    .iconBtn:hover{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.14);
+      transform:translateY(-1px);
+    }
+    .iconBtn:active{transform:translateY(0px) scale(.99)}
+    .iconBtn svg{width:18px;height:18px; opacity:.9}
+
+    .dangerHover:hover{
+      background:rgba(255,77,109,.12);
+      border-color:rgba(255,77,109,.26);
+    }
+
+    .srOnly{
+      position:absolute;
+      width:1px;height:1px;
+      padding:0;margin:-1px;
+      overflow:hidden;clip:rect(0,0,0,0);
+      white-space:nowrap;border:0;
+    }
+
+    footer{
+      color:rgba(255,255,255,.42);
+      font-size:12px;
+      text-align:center;
+      padding:8px 0 2px;
+    }
+
+    @media (max-width: 560px){
+      .btnPrimary{min-width:104px}
+      header{padding:16px 14px 12px}
+      .card{padding:12px}
+      form{flex-direction:column; align-items:stretch}
+      .btnPrimary{width:100%}
+      .listHeader{flex-direction:column; align-items:flex-start}
+      .actions{gap:6px}
+      .iconBtn{width:40px;height:40px}
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{animation:none !important; transition:none !important}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <main>
+      <header>
+        <div class="titleRow">
+          <div>
+            <h1>
+              Task Manager
+              <span class="badge"><span class="badgeDot"></span> Dark Mode</span>
+            </h1>
+            <p class="sub">Add tasks, edit inline, mark complete, and everything stays saved locally.</p>
+          </div>
+          <div class="stats" aria-label="Task statistics">
+            <div class="pill" title="Total tasks"><span style="opacity:.75">Total</span> <strong id="totalCount">0</strong></div>
+            <div class="pill" title="Completed tasks"><span style="opacity:.75">Done</span> <strong id="doneCount">0</strong></div>
+          </div>
+        </div>
+      </header>
+
+      <section class="card" aria-label="Add a task">
+        <form id="taskForm" autocomplete="off">
+          <div class="inputWrap">
+            <span class="spark" aria-hidden="true"></span>
+            <label class="srOnly" for="taskInput">New task</label>
+            <input id="taskInput" type="text" placeholder="Add a task… (press Enter)" maxlength="160" />
+          </div>
+          <button class="btnPrimary" type="submit" aria-label="Add task">
+            <span aria-hidden="true">＋</span>
+            Add
+          </button>
+        </form>
+      </section>
+
+      <section class="card" aria-label="Task list">
+        <div class="listHeader">
+          <h2>
+            <span aria-hidden="true">🗂️</span>
+            Tasks
+          </h2>
+          <p class="hint">Tip: Click a task to edit. Press Enter to save, Esc to cancel.</p>
+        </div>
+
+        <ul id="taskList" aria-live="polite" aria-relevant="additions removals"></ul>
+        <div id="emptyState" class="empty" hidden>No tasks yet. Add one above.</div>
+      </section>
+
+      <footer>Stored in your browser (localStorage). No accounts, no tracking.</footer>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const STORAGE_KEY = "task-manager:v1";
+
+      const $ = (sel, root = document) => root.querySelector(sel);
+
+      const els = {
+        form: $("#taskForm"),
+        input: $("#taskInput"),
+        list: $("#taskList"),
+        empty: $("#emptyState"),
+        total: $("#totalCount"),
+        done: $("#doneCount")
+      };
+
+      const uid = () =>
+        (crypto?.randomUUID?.() ?? `t_${Date.now().toString(36)}_${Math.random().toString(36).slice(2, 8)}`);
+
+      const load = () => {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          const parsed = raw ? JSON.parse(raw) : [];
+          return Array.isArray(parsed) ? parsed : [];
+        } catch {
+          return [];
+        }
+      };
+
+      const save = (tasks) => {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(tasks));
+      };
+
+      const state = {
+        tasks: load()
+      };
+
+      const counts = () => {
+        const total = state.tasks.length;
+        const done = state.tasks.reduce((acc, t) => acc + (t.completed ? 1 : 0), 0);
+        els.total.textContent = String(total);
+        els.done.textContent = String(done);
+        els.empty.hidden = total !== 0;
+      };
+
+      const sanitizeText = (text) => text.replace(/\s+/g, " ").trim();
+
+      const taskItemTemplate = (task) => {
+        const li = document.createElement("li");
+        li.className = "task" + (task.completed ? " completed" : "");
+        li.dataset.id = task.id;
+
+        const check = document.createElement("button");
+        check.type = "button";
+        check.className = "check";
+        check.setAttribute("aria-label", task.completed ? "Mark as not completed" : "Mark as completed");
+        check.innerHTML = `
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        `;
+
+        const textWrap = document.createElement("div");
+        textWrap.className = "text";
+
+        const label = document.createElement("div");
+        label.className = "label";
+        label.textContent = task.text;
+        label.setAttribute("role", "textbox");
+        label.setAttribute("aria-label", "Task text (click to edit)");
+        label.setAttribute("tabindex", "0");
+        label.setAttribute("contenteditable", "false");
+        label.dataset.original = task.text;
+
+        const actions = document.createElement("div");
+        actions.className = "actions";
+
+        const editBtn = document.createElement("button");
+        editBtn.type = "button";
+        editBtn.className = "iconBtn";
+        editBtn.setAttribute("aria-label", "Edit task");
+        editBtn.innerHTML = `
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M12 20h9" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4 12.5-12.5Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        `;
+
+        const delBtn = document.createElement("button");
+        delBtn.type = "button";
+        delBtn.className = "iconBtn dangerHover";
+        delBtn.setAttribute("aria-label", "Delete task");
+        delBtn.innerHTML = `
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M3 6h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M8 6V4h8v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M19 6l-1 14H6L5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M10 11v6M14 11v6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        `;
+
+        actions.append(editBtn, delBtn);
+        textWrap.append(label);
+        li.append(check, textWrap, actions);
+
+        return li;
+      };
+
+      const render = ({ animateId = null } = {}) => {
+        els.list.textContent = "";
+        const frag = document.createDocumentFragment();
+
+        for (const task of state.tasks) {
+          const li = taskItemTemplate(task);
+          if (animateId && task.id === animateId) li.classList.add("fadeIn");
+          frag.appendChild(li);
+        }
+
+        els.list.appendChild(frag);
+        counts();
+      };
+
+      const upsertTask = (task) => {
+        const idx = state.tasks.findIndex(t => t.id === task.id);
+        if (idx === -1) state.tasks.unshift(task);
+        else state.tasks[idx] = task;
+        save(state.tasks);
+      };
+
+      const removeTask = (id) => {
+        state.tasks = state.tasks.filter(t => t.id !== id);
+        save(state.tasks);
+      };
+
+      const setCompleted = (id, completed) => {
+        const t = state.tasks.find(x => x.id === id);
+        if (!t) return;
+        t.completed = completed;
+        save(state.tasks);
+      };
+
+      const updateText = (id, text) => {
+        const t = state.tasks.find(x => x.id === id);
+        if (!t) return;
+        t.text = text;
+        save(state.tasks);
+      };
+
+      const startInlineEdit = (labelEl) => {
+        const li = labelEl.closest(".task");
+        if (!li) return;
+
+        const id = li.dataset.id;
+        const task = state.tasks.find(t => t.id === id);
+        if (!task) return;
+
+        if (labelEl.getAttribute("contenteditable") === "true") return;
+
+        labelEl.dataset.original = task.text;
+        labelEl.setAttribute("contenteditable", "true");
+        labelEl.focus();
+
+        const range = document.createRange();
+        range.selectNodeContents(labelEl);
+        range.collapse(false);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+
+        const finalize = (mode) => {
+          labelEl.removeEventListener("keydown", onKey);
+          labelEl.removeEventListener("blur", onBlur);
+          labelEl.setAttribute("contenteditable", "false");
+
+          const next = sanitizeText(labelEl.textContent || "");
+          if (mode === "cancel") {
+            labelEl.textContent = labelEl.dataset.original || "";
+            return;
+          }
+          if (!next) {
+            labelEl.textContent = labelEl.dataset.original || "";
+            return;
+          }
+          updateText(id, next);
+          labelEl.textContent = next;
+        };
+
+        const onKey = (e) => {
+          if (e.key === "Enter") {
+            e.preventDefault();
+            labelEl.blur();
+          } else if (e.key === "Escape") {
+            e.preventDefault();
+            finalize("cancel");
+            labelEl.blur();
+          }
+        };
+
+        const onBlur = () => finalize("save");
+
+        labelEl.addEventListener("keydown", onKey);
+        labelEl.addEventListener("blur", onBlur);
+      };
+
+      const handleAdd = (text) => {
+        const cleaned = sanitizeText(text);
+        if (!cleaned) return;
+
+        const task = {
+          id: uid(),
+          text: cleaned,
+          completed: false,
+          createdAt: Date.now()
+        };
+
+        state.tasks.unshift(task);
+        save(state.tasks);
+        render({ animateId: task.id });
+      };
+
+      els.form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        handleAdd(els.input.value);
+        els.input.value = "";
+        els.input.focus();
+      });
+
+      els.list.addEventListener("click", (e) => {
+        const li = e.target.closest(".task");
+        if (!li) return;
+
+        const id = li.dataset.id;
+
+        const checkBtn = e.target.closest(".check");
+        if (checkBtn) {
+          const task = state.tasks.find(t => t.id === id);
+          if (!task) return;
+          setCompleted(id, !task.completed);
+          render();
+          return;
+        }
+
+        const delBtn = e.target.closest(".dangerHover");
+        if (delBtn) {
+          removeTask(id);
+          render();
+          return;
+        }
+
+        const editBtn = e.target.closest(".iconBtn:not(.dangerHover)");
+        if (editBtn) {
+          const label = li.querySelector(".label");
+          if (label) startInlineEdit(label);
+          return;
+        }
+
+        const label = e.target.closest(".label");
+        if (label) startInlineEdit(label);
+      });
+
+      els.list.addEventListener("keydown", (e) => {
+        if (e.key !== "Enter") return;
+        const label = e.target.closest(".label");
+        if (!label) return;
+        if (label.getAttribute("contenteditable") === "true") return;
+        e.preventDefault();
+        startInlineEdit(label);
+      });
+
+      // Initial render
+      render();
+      counts();
+    })();
+  </script>
+</body>
+</html>
